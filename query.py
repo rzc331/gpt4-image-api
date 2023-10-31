@@ -1,14 +1,15 @@
-import requests
 from pprint import pprint
+
+import requests
 
 PORT_NUMBER = 8000
 
 image_path = "images/observation_0.jpg"
 
 payload = {
-    "continue_chat": True,
+    "new_chat": True,
     "image_path": image_path,
-    "prompt": "How many fridge doors are there?", ## "Describe this image precisely."
+    "prompt": "How many fridge doors are there?",  ## "Describe this image precisely."
 }
 
 response = requests.post(

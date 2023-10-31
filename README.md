@@ -57,7 +57,7 @@ Request:
 {
     "image_path": "images/observation_0.jpg",
     "prompt": "Describe in a list all objects in this image.",
-    "continue_chat": False
+    "new_chat": True
 }
 
 Response:
@@ -71,7 +71,7 @@ Request:
 {
     "image_path": "None",
     "prompt": "Is the door of the refrigerator open?",
-    "continue_chat": True
+    "new_chat": False
 }
 
 Response:
@@ -85,7 +85,7 @@ Request:
 {
     "image_path": "images/observation_29.jpg",
     "prompt": "Is the door of the refrigerator open?",
-    "continue_chat": True
+    "new_chat": False
 }
 
 Response:

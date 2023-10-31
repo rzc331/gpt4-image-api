@@ -23,7 +23,7 @@ app = FastAPI()
 class Payload(BaseModel):
     prompt: str
     image_path: str = "None"
-    continue_chat: bool = False
+    new_chat: bool = True
 
 
 ANSWER_FORMAT = "Answer ONLY by JSON following this format: " '{"answer": your answer}'
@@ -77,9 +77,9 @@ async def perform_action(payload: Payload):
         image_filename = payload.image_path
 
         # open new chat
-        if not payload.continue_chat:
+        if payload.new_chat:
             driver.get("https://chat.openai.com/?model=gpt-4")
-            time.sleep(WAIT_TIME*2)
+            time.sleep(WAIT_TIME * 2)
 
         # Make the input file element visible
         driver.execute_script(
