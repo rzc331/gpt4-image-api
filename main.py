@@ -97,7 +97,7 @@ async def perform_action(payload: Payload):
 
         # Find prompt text area
         prompt = driver.find_element(By.XPATH, '//textarea[@id="prompt-textarea"]')
-        prompt.send_keys(payload.prompt + '\n' + ANSWER_FORMAT)
+        prompt.send_keys(payload.prompt + '\n' + payload.answer_format)
 
         # Find the submit button data-testid="send-button
         submit_button = driver.find_element(
