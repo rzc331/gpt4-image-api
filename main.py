@@ -26,7 +26,7 @@ class Payload(BaseModel):
     new_chat: bool = True
 
 
-ANSWER_FORMAT = "Answer ONLY by JSON following this format: " '{"answer": your answer}'
+ANSWER_FORMAT = "Answer ONLY by JSON following this format: " '{"answer": your answer in one paragraph}'
 PORT_NUMBER = 8000
 WAIT_TIME = 1
 
@@ -98,7 +98,7 @@ async def perform_action(payload: Payload):
 
         # Find prompt text area
         prompt = driver.find_element(By.XPATH, '//textarea[@id="prompt-textarea"]')
-        prompt.send_keys(payload.prompt + ANSWER_FORMAT)
+        prompt.send_keys(payload.prompt + '\n' + ANSWER_FORMAT)
 
         # Find the submit button data-testid="send-button
         submit_button = driver.find_element(
