@@ -13,22 +13,21 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 load_dotenv()
 
-
 options = uc.ChromeOptions()
 options.headless = False
 driver = uc.Chrome(options=options)
 app = FastAPI()
+
+ANSWER_FORMAT = "Answer ONLY by JSON following this format: " '{"answer": your answer in one paragraph}'
+PORT_NUMBER = 8000
+WAIT_TIME = 1
 
 
 class Payload(BaseModel):
     prompt: str
     image_path: str = "None"
     new_chat: bool = True
-
-
-ANSWER_FORMAT = "Answer ONLY by JSON following this format: " '{"answer": your answer in one paragraph}'
-PORT_NUMBER = 8000
-WAIT_TIME = 1
+    answer_format: str = ANSWER_FORMAT
 
 
 @app.get("/start")
