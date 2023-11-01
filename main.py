@@ -19,7 +19,7 @@ driver = uc.Chrome(options=options)
 app = FastAPI()
 
 ANSWER_FORMAT = "Answer ONLY by JSON following this format: " '{"answer": your answer in one paragraph}'
-PORT_NUMBER = 8000
+PORT_NUMBER = 8030
 WAIT_TIME = 1
 
 
